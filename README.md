@@ -125,7 +125,7 @@ All experiments share the following optimizer and learning rate schedule configu
 | Weight decay | $0.01$ ($0.0$ for RLVR) |
 | Gradient clipping | $1.0$ |
 | LR schedule | Linear warmup (first 5% of steps) $\to$ cosine decay to $0.1 \times$ peak |
-| Precision | BF16 mixed precision, TF32 matmul |
+| Precision | BF16 mixed precision, TF32 matmul enabled |
 | LoRA dropout | $0.0$ |
 | LoRA bias | None |
 
