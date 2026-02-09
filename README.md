@@ -11,7 +11,7 @@
 
 ## Overview
 
-**Maximal-Update Adaptation ($\textbf{\mu A}$)** is a theoretical framework that characterizes how the optimal learning rate $\eta$ should scale with model width $n$ and LoRA adapter rank $r$ to produce stable, non-vanishing feature updates (or maximal feature updates). Our analysis reveals two distinct regimes for LoRA finetuning (see Figure below):
+**Maximal-Update Adaptation μA** is a theoretical framework that characterizes how the optimal learning rate $\eta$ should scale with model width $n$ and LoRA adapter rank $r$ to produce stable, non-vanishing feature updates (or maximal feature updates). Our analysis reveals two distinct regimes for LoRA finetuning (see Figure below):
 
 1. **Rank-dependent regime** — the optimal learning rate scales inversely with rank (e.g., Init\[A\] with $\alpha = 1$: $\eta \propto r^{-1/2}$).
 2. **Rank-invariant regime** — the optimal learning rate is independent of rank (e.g., Init\[B\] with $\alpha = 1$: $\eta \propto n^{-1}$).
@@ -32,7 +32,7 @@ A key practical finding is that **Init\[B\] with $\alpha=1$** yields a learning 
 </table>
 
 
-**Summary of Key $\mu$ A Scaling Rules**
+**Summary of Key μA Scaling Rules**
 
 | Configuration | Init | $\alpha$ | Optimal $\eta$ | LR–Rank Relationship | Transfer to FFT |
 |:---|:---:|:---:|:---:|:---:|:---:|
@@ -89,7 +89,7 @@ The non-zero factor is initialized with Kaiming normal initialization.
 
 ### 3. LoRA Multiplier $\alpha$ (`--init-method` suffix)
 
-The LoRA update takes the form $W = W^\star + \alpha_{\text{eff}} \cdot BA$. In HuggingFace PEFT, the effective multiplier is $\alpha_{\text{eff}} = \texttt{lora\_alpha} / r$. This repo exposes common choices via flag suffixes:
+The LoRA update takes the form $W = W^\star + \alpha_{\text{eff}} \cdot BA$. In HuggingFace PEFT, the effective multiplier is $`\alpha_{\text{eff}} = \texttt{lora\_alpha} / r`$. This repo exposes common choices via flag suffixes:
 
 | Flag suffix | Effective $\alpha$ | PEFT `lora_alpha` |
 |:---|:---:|:---:|
