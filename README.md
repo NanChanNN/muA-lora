@@ -1,4 +1,4 @@
-# $\mu$A: Learning Rate Scaling across LoRA Ranks and Transfer to Full Finetuning
+# μA: Learning Rate Scaling across LoRA Ranks and Transfer to Full Finetuning
 
 [![arXiv](https://img.shields.io/badge/arXiv-2602.06204-b31b1b.svg)](https://arxiv.org/abs/2602.06204)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
