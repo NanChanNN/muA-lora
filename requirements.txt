@@ -1,0 +1,11 @@
+torch==2.7.0
+torchvision==0.22.0
+transformers==4.57.1
+peft==0.17.0
+trl==0.26.2
+datasets==4.3.0
+diffusers==0.36.0
+evaluate==0.4.6
+torchmetrics==1.8.2
+flash-attn==2.8.3
+wandb

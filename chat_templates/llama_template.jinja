@@ -1,0 +1,19 @@
+{{- "<|begin_of_text|>" -}}
+{{- "<|start_header_id|>system<|end_header_id|>\n\n" -}}
+{{- "You are a helpful assistant\n\n" -}}
+{{- "<|eot_id|>" -}}
+
+{%- for message in messages -%}
+    {%- if message['role'] == 'user' -%}
+        {{- "<|start_header_id|>user<|end_header_id|>\n\n" + message['content'] + "<|eot_id|>" -}}
+
+    {%- elif message['role'] == 'assistant' -%}
+         {% generation %}
+        {{- "<|start_header_id|>assistant<|end_header_id|>\n\n" + message['content'] + "<|eot_id|>" -}}
+        {% endgeneration %}
+    {%- endif -%}
+{%- endfor -%}
+
+{%- if add_generation_prompt -%}
+    {{- "<|start_header_id|>assistant<|end_header_id|>\n\n" -}}
+{% endif %}
