@@ -25,9 +25,9 @@ A key practical finding is that **Init\[B\] with $\alpha = 1$** yields a learnin
     <td align="center"><img src="assets/fig1c.png" width="295"></td>
   </tr>
   <tr>
-    <td align="center"><sub>a) Init[A] with $\alpha = 1$: optimal LR decreases with rank.</sub></td>
-    <td align="center"><sub>b) Init[A] with $\alpha = r^{-1}$: optimal LR is rank-invariant.</sub></td>
-    <td align="center"><sub>c) Init[B] with $\alpha = 1$: optimal LR is rank-invariant,<br>and aligns with FFT (red dashed).</sub></td>
+    <td align="center"><sub>a) Init[A] with α=1: optimal LR decreases with rank.</sub></td>
+    <td align="center"><sub>b) Init[A] with α=1/r: optimal LR is rank-invariant.</sub></td>
+    <td align="center"><sub>c) Init[B] with α=1: optimal LR is rank-invariant,<br>and aligns with FFT (red dashed).</sub></td>
   </tr>
 </table>
 
@@ -89,7 +89,7 @@ The non-zero factor is initialized with Kaiming normal initialization.
 
 ### 3. LoRA Multiplier $\alpha$ (`--init-method` suffix)
 
-The LoRA update takes the form $W = W^\star + \alpha_{\text{eff}} \cdot BA$. In HuggingFace PEFT, the effective multiplier is $\alpha_{\text{eff}} = \texttt{lora_alpha} / r$. This repo exposes common choices via flag suffixes:
+The LoRA update takes the form $W = W^\star + \alpha_{\text{eff}} \cdot BA$. In HuggingFace PEFT, the effective multiplier is $\alpha_{\text{eff}} = \texttt{lora\_alpha} / r$. This repo exposes common choices via flag suffixes:
 
 | Flag suffix | Effective $\alpha$ | PEFT `lora_alpha` |
 |:---|:---:|:---:|
