@@ -89,7 +89,7 @@ The non-zero factor is initialized with Kaiming normal initialization.
 
 ### 3. LoRA Multiplier $\alpha$ (`--init-method` suffix)
 
-The LoRA update takes the form $W = W^\star + \alpha_{\text{eff}} \cdot BA$. In HuggingFace PEFT, the effective multiplier is $\alpha_{\text{eff}} = \texttt{lora\_alpha} / r$. This repo exposes common choices via flag suffixes:
+The LoRA update takes the form $W = W^\star + \alpha_{\text{eff}} \cdot BA$. In HuggingFace PEFT, the effective multiplier is $\alpha_{\text{eff}} = \texttt{lora_alpha} / r$. This repo exposes common choices via flag suffixes:
 
 | Flag suffix | Effective $\alpha$ | PEFT `lora_alpha` |
 |:---|:---:|:---:|
