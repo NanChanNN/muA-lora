@@ -99,7 +99,7 @@ The LoRA update takes the form $W = W^\star + \alpha_{\text{eff}} \cdot BA$. In 
 
 **Combined examples:**
 
-| `--init-method` | Initialization | Multiplier |
+| `--init-method` | Initialization | Effective $\alpha$ |
 |:---|:---|:---|
 | `initB_constant1` | Init\[B\] | $\alpha = 1$ |
 | `initA_alpha1` | Init\[A\] | $\alpha = 1/r$ |
