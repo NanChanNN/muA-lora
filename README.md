@@ -11,7 +11,7 @@
 
 ## Overview
 
-**Maximal-Update Adaptation ($\mu A$)** is a theoretical framework that characterizes how the optimal learning rate $\eta$ should scale with model width $n$ and LoRA adapter rank $r$ to produce stable, non-vanishing feature updates (or maximal feature updates). Our analysis reveals two distinct regimes for LoRA finetuning (see Figure below):
+**Maximal-Update Adaptation ($\textbf{\mu A}$)** is a theoretical framework that characterizes how the optimal learning rate $\eta$ should scale with model width $n$ and LoRA adapter rank $r$ to produce stable, non-vanishing feature updates (or maximal feature updates). Our analysis reveals two distinct regimes for LoRA finetuning (see Figure below):
 
 1. **Rank-dependent regime** — the optimal learning rate scales inversely with rank (e.g., Init\[A\] with $\alpha = 1$: $\eta \propto r^{-1/2}$).
 2. **Rank-invariant regime** — the optimal learning rate is independent of rank (e.g., Init\[B\] with $\alpha = 1$: $\eta \propto n^{-1}$).
