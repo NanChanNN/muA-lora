@@ -36,7 +36,7 @@ A key practical finding is that Init\[B\] with $\alpha=1$ yields a learning rate
 
 | Configuration | Init | $\alpha$ | Optimal $\eta$ | LR–Rank Relationship | Transfer to FFT |
 |:---|:---:|:---:|:---:|:---:|:---:|
-| Init\[A\], $\alpha = 1$ | $A \sim \mathcal{N}(0, 1/n)$, $B = 0$ | $1$ | $\Theta(n^{-1/2}\, r^{-1/2})$ | $\eta \propto r^{-1/2}$ | ✗ |
+| Init\[A\], $\alpha = 1$ | $A \sim N(0, 1/n)$, $B = 0$ | $1$ | $\Theta(n^{-1/2}\, r^{-1/2})$ | $\eta \propto r^{-1/2}$ | ✗ |
 | Init\[A\], $\alpha = r^{-1}$ | $A \sim \mathcal{N}(0, 1/n)$, $B = 0$ | $r^{-1}$ | $\Theta(n^{-1/2})$ | Rank-invariant | ✗ |
 | Init\[B\], $\alpha = 1$ | $B \sim \mathcal{N}(0, 1/r)$, $A = 0$ | $1$ | $\Theta(n^{-1})$ | Rank-invariant | **✓** |
 
