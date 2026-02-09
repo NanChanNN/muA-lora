@@ -11,9 +11,11 @@
 
 ## Overview
 
+The following results/discussion considers the LoRA adapters parametrized as $W + \alpha \times B A$.
+
 **Maximal-Update Adaptation μA** is a theoretical framework that characterizes how the optimal learning rate $\eta$ should scale with model width $n$ and LoRA adapter rank $r$ to produce stable, non-vanishing feature updates (or maximal feature updates). Our analysis reveals two distinct regimes for LoRA finetuning (see Figure below):
 
-1. **Rank-dependent regime** — the optimal learning rate scales inversely with rank (e.g., Init\[A\] with $\alpha = 1$: $\eta \propto r^{-1/2}$).
+1. **Rank-dependent regime** — the optimal learning rate scales inversely with rank (e.g., Init\[A\] with $\alpha$ constant: $\eta \propto r^{-1/2}$). This is a commonly used setup in practice.
 2. **Rank-invariant regime** — the optimal learning rate is independent of rank (e.g., Init\[B\] with $\alpha = 1$: $\eta \propto n^{-1}$).
 
 A key practical finding is that Init\[B\] with $\alpha=1$ yields a learning rate scaling $\eta = \Theta(n^{-1})$ that matches full finetuning (FFT), enabling direct **learning rate transfer from LoRA to FFT** — drastically reducing the cost of hyperparameter tuning.
@@ -35,8 +37,8 @@ A key practical finding is that Init\[B\] with $\alpha=1$ yields a learning rate
 **Summary of Key μA Scaling Rules**
 
 | Configuration | Init | $\alpha$ | Optimal $\eta$ | LR–Rank Relationship | Transfer to FFT |
-|:---|:---:|:---:|:---:|:---:|:---:|
-| Init\[A\], $\alpha = 1$ | $A \sim N(0, 1/n)$ | $1$ | $\Theta(n^{-1/2}\, r^{-1/2})$ | $\eta \propto r^{-1/2}$ | ✗ |
+|:---|:---|:---|:---|:---|:---:|
+| Init\[A\], $\alpha = 1$ | $A \sim \mathcal{N}(0, 1/n)$, $B=0$ | $1$ | $\Theta(n^{-1/2}  r^{-1/2})$ | $\eta \propto r^{-1/2}$ | ✗ |
 | Init\[A\], $\alpha = r^{-1}$ | $A \sim \mathcal{N}(0, 1/n)$, $B = 0$ | $r^{-1}$ | $\Theta(n^{-1/2})$ | Rank-invariant | ✗ |
 | Init\[B\], $\alpha = 1$ | $B \sim \mathcal{N}(0, 1/r)$, $A = 0$ | $1$ | $\Theta(n^{-1})$ | Rank-invariant | **✓** |
 
