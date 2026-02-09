@@ -117,7 +117,7 @@ For example, `--learning-rate-exponent 16` gives $\eta = 2^{-16} \approx 1.53 \t
 
 ## Unified Training Recipe
 
-All experiments share the following optimizer and schedule configuration (Table 2 in the paper):
+All experiments share the following optimizer and learning rate schedule configuration (see also Table 2 in the paper):
 
 | Setting | Value |
 |:---|:---|
