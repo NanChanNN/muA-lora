@@ -16,7 +16,7 @@
 1. **Rank-dependent regime** — the optimal learning rate scales inversely with rank (e.g., Init\[A\] with $\alpha = 1$: $\eta \propto r^{-1/2}$).
 2. **Rank-invariant regime** — the optimal learning rate is independent of rank (e.g., Init\[B\] with $\alpha = 1$: $\eta \propto n^{-1}$).
 
-A key practical finding is that **Init\[B\] with $\alpha = 1$** yields a learning rate scaling $\eta = \Theta(n^{-1})$ that matches full finetuning (FFT), enabling direct **learning rate transfer from LoRA to FFT** — drastically reducing the cost of hyperparameter tuning.
+A key practical finding is that **Init\[B\] with $\alpha=1$** yields a learning rate scaling $\eta = \Theta(n^{-1})$ that matches full finetuning (FFT), enabling direct **learning rate transfer from LoRA to FFT** — drastically reducing the cost of hyperparameter tuning.
 
 <table align="center">
   <tr>
@@ -32,7 +32,7 @@ A key practical finding is that **Init\[B\] with $\alpha = 1$** yields a learnin
 </table>
 
 
-**Summary of Key $\mu$A Scaling Rules**
+**Summary of Key $\mu$ A Scaling Rules**
 
 | Configuration | Init | $\alpha$ | Optimal $\eta$ | LR–Rank Relationship | Transfer to FFT |
 |:---|:---:|:---:|:---:|:---:|:---:|
