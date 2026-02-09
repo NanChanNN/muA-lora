@@ -16,7 +16,7 @@
 1. **Rank-dependent regime** — the optimal learning rate scales inversely with rank (e.g., Init\[A\] with $\alpha = 1$: $\eta \propto r^{-1/2}$).
 2. **Rank-invariant regime** — the optimal learning rate is independent of rank (e.g., Init\[B\] with $\alpha = 1$: $\eta \propto n^{-1}$).
 
-A key practical finding is that **Init\[B\] with $\alpha=1$** yields a learning rate scaling $\eta = \Theta(n^{-1})$ that matches full finetuning (FFT), enabling direct **learning rate transfer from LoRA to FFT** — drastically reducing the cost of hyperparameter tuning.
+A key practical finding is that Init\[B\] with $\alpha=1$ yields a learning rate scaling $\eta = \Theta(n^{-1})$ that matches full finetuning (FFT), enabling direct **learning rate transfer from LoRA to FFT** — drastically reducing the cost of hyperparameter tuning.
 
 <table align="center">
   <tr>
@@ -58,7 +58,7 @@ A key practical finding is that **Init\[B\] with $\alpha=1$** yields a learning 
 
 ## Setup
 
-All experiments assume **CUDA with BF16/TF32** support. Please run:
+All experiments assume **CUDA with BF16/TF32** support. Please use the following command to install the dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -108,9 +108,9 @@ The LoRA update takes the form $W = W^\star + \alpha_{\text{eff}} \cdot BA$. In 
 ### 4. Learning Rate Exponent (`--learning-rate-exponent`)
 
 All scripts parameterize the learning rate on a $\log_2$ scale:
-
-$$\eta = 2^{-\texttt{learning\_rate\_exponent}}$$
-
+```math
+\eta = 2^{-\texttt{learning\_rate\_exponent}}
+```
 For example, `--learning-rate-exponent 16` gives $\eta = 2^{-16} \approx 1.53 \times 10^{-5}$. This convention aligns with the paper's log-scale sweeps.
 
 ---
