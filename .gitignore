@@ -1,0 +1,112 @@
+# -------------------------
+# Python basics
+# -------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.pyre/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+*.egg
+
+# -------------------------
+# Virtual environments
+# -------------------------
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# -------------------------
+# IDE / editor
+# -------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Jupyter / IPython
+# -------------------------
+.ipynb_checkpoints/
+.profile_default/
+.ipython/
+
+# -------------------------
+# Logs & debug
+# -------------------------
+*.log
+logs/
+log/
+debug.log
+
+# -------------------------
+# Experiment tracking / ML tooling
+# -------------------------
+# TensorBoard
+runs/
+# Weights & Biases
+wandb/
+# MLflow
+mlruns/
+# Lightning
+lightning_logs/
+# Hydra
+outputs/
+multirun/
+
+# -------------------------
+# Data & artifacts (usually don't commit)
+# -------------------------
+data/
+datasets/
+*.csv
+*.tsv
+*.parquet
+*.h5
+*.hdf5
+*.npz
+*.npy
+
+# -------------------------
+# Model checkpoints / weights
+# -------------------------
+checkpoints/
+ckpts/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.tflite
+
+# -------------------------
+# Packaging / installers
+# -------------------------
+*.whl
+
+# -------------------------
+# Secrets (never commit)
+# -------------------------
+.env
+.env.*
+*.pem
+*.key
+secrets/
+
